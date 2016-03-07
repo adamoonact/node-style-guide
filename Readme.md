@@ -91,21 +91,20 @@ Limit your lines to 80 characters. Yes, screens have gotten much bigger over the
 last few years, but your brain has not. Use the additional room for split screen,
 your editor supports that, right?
 
-### Use single quotes
+### prefer double quotes
 
 Use single quotes, unless you are writing JSON.
 
 *Right:*
 
 ```js
+var foo = "bar";
+```
+*Wrong:*
+```js
 var foo = 'bar';
 ```
 
-*Wrong:*
-
-```js
-var foo = "bar";
-```
 
 ### Opening braces go on the same line
 
@@ -129,42 +128,6 @@ if (true)
 ```
 
 Also, notice the use of whitespace before and after the condition statement.
-
-### Declare one variable per var statement
-
-Declare one variable per var statement, it makes it easier to re-order the
-lines. However, ignore [Crockford][crockfordconvention] when it comes to
-declaring variables deeper inside a function, just put the declarations wherever
-they make sense.
-
-*Right:*
-
-```js
-var keys   = ['foo', 'bar'];
-var values = [23, 42];
-
-var object = {};
-while (keys.length) {
-  var key = keys.pop();
-  object[key] = values.pop();
-}
-```
-
-*Wrong:*
-
-```js
-var keys = ['foo', 'bar'],
-    values = [23, 42],
-    object = {},
-    key;
-
-while (keys.length) {
-  key = keys.pop();
-  object[key] = values.pop();
-}
-```
-
-[crockfordconvention]: http://javascript.crockford.com/code.html
 
 ### Naming Conventions
 
@@ -286,24 +249,6 @@ if (a == '') {
 ```
 
 [comparisonoperators]: https://developer.mozilla.org/en/JavaScript/Reference/Operators/Comparison_Operators
-
-### Use multi-line ternary operator
-
-The ternary operator should not be used on a single line. Split it up into multiple lines instead.
-
-*Right:*
-
-```js
-var foo = (a === b)
-  ? 1
-  : 2;
-```
-
-*Wrong:*
-
-```js
-var foo = (a === b) ? 1 : 2;
-```
 
 ### Use descriptive conditions
 
